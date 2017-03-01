@@ -1,0 +1,76 @@
+#all{
+	width: 420px;
+	height: 320px;
+	margin: 70px auto;
+	position: relative;
+	background: gray;
+}
+div #bg_before{
+	width: 306px;
+	height: 306px;
+	background: url(../img/test.jpg);
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	visibility: visible;
+}
+#bg {
+	width: 306px;
+	height: 306px;
+	/*margin: 70px auto;*/
+	background-color: black;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	visibility: hidden;
+}
+
+#original-picture {
+	width: 100px;
+	height: 100px;
+	border: 1px black solid;
+	position: absolute;
+	right: 1px;
+	top: 1px;
+}
+
+#ButtonScore{
+	width: 100px;
+	height: 200px;
+	border: 1px black solid;
+	position: absolute;
+	right: 0px;
+	bottom:0px;
+}
+
+
+input{
+	width: 50px;
+	margin: 10px 25px;
+	font-size: 0.5em;
+}
+
+#score{
+	width: 60px;
+	height: 100px;
+	border: 1px black solid;
+	margin: 0 auto;
+	text-align: center;
+}
+.block {
+	width: 100px;
+	height: 100px;
+	border: 1px black solid;
+	background-color: lightslategray;
+	position: absolute;
+	z-index: 10;
+}
+
+#move_block {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	position: absolute;
+	border: 1px black solid;
+	z-index: 11;
+}
