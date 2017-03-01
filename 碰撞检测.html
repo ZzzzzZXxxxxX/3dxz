@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#wrap{
+				width: 600px;
+				height: 300px;
+				border: black solid 5px;
+				margin: 50px auto;
+				position: relative;
+			}
+			#box{
+				width: 50px;
+				height: 50px;
+				background: green;
+				position: absolute;
+				left:0;
+				top: 0;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<p id="box"></p>
+		</div>
+		<script>
+//			var t='a';
+//			function fn(){
+//				alert(t);//undifined
+//				var t='c';
+//			}
+//			alert(t);//先出现的A
+//			fn();
+			var wrap=document.getElementById("wrap");
+			var box=document.getElementById("box");
+			var l=0;//小球左边距
+			var t=0;//小球上边距
+			var movel=true;//标记运动方向
+			var movet=true;
+			var time=setInterval(function(){
+				if(movel){
+					var a=wrap.clientWidth-box.offsetWidth;//clientWidth取宽度不包括边框offsetWidth包括边框
+					l++;
+					if(l>=a){
+						movel=false;
+					}
+					box.style.left=l+'px';
+				}else{
+					l--;
+					if(l<=0){
+						movel=true;
+					}
+					box.style.left=l+'px';
+				}
+				if(movet){
+					var a=wrap.clientHeight-box.offsetHeight;//clientWidth取宽度不包括边框offsetWidth包括边框
+					t++;
+					if(t>=a){
+						movet=false;
+					}
+					box.style.top=t+'px';
+				}else{
+					t--;
+					if(t<=0){
+						movet=true;
+					}
+					box.style.top=t+'px';
+				}
+			},5);
+		</script>
+	</body>
+</html>
