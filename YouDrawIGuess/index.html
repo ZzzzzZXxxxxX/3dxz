@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link href="styles/websocketGame.css" rel="stylesheet">
+</head>
+<body>
+        <div id="game">
+            <h1>Draw & Guess</h1>
+            <input type="button" id="btnDraw" value="开始绘画">
+            <input type="button" id="btnReDraw" value="重新绘画">
+            <input type="button" id="btnDrawOver" value="绘画完毕">
+            <canvas id="drawing-pad" width="500" height="400">
+                对不起，你的浏览器不支持Canvas
+            </canvas>
+            <div id="divColorY" class="divColor"></div>
+            <div id="divColorG" class="divColor"></div>
+            <div id="divColorB" class="divColor"></div>
+            <div id="divColorH" class="divColor"></div>
+            <div id="divColorR" class="divColor"></div>
+            <div id="chat-history">
+                <ul id="chatList">
+                </ul>
+                <input type="text" id="message">
+                <input type="button" value="send" id="btnSend">
+            </div>
+
+        </div>
+
+
+        <!--<input type="text" id="message">-->
+    <!--<input type="button" value="send" id="btnSend">-->
+
+<script src="scripts/jquery-1.10.2.min.js"></script>
+<script src="scripts/dataType.js"></script>
+<script src="scripts/webSocketGame.js"></script>
+</body>
+</html>

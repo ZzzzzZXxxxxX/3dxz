@@ -1,0 +1,13 @@
+body
+{
+    margin: 0 auto;
+    text-align: center;
+}
+#game,#game_scene,#game_canvas
+{
+    margin: 0 auto;
+}
+canvas
+{
+    background-color: gray;
+}

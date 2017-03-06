@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <title>Socket.IO chat</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; }
+        #set-nickname { background: gray;margin: 0 auto; margin-top: 160px;  width: 500px;font-size: 2em;}
+        #set-nickname button { width: 15%; background: rgb(130, 224, 255); border: none; padding: 10px;}
+        #nickname { border: 0; padding: 10px; width: 80%; margin-right: .5%; }
+        #send-message { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+        #send-message input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+        #send-message button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+        #messages { list-style-type: none; margin: 0; padding: 0; }
+        #messages li { padding: 5px 10px; }
+        #messages li:nth-child(odd) { background: #eee; }
+    </style>
+</head>
+
+<body>
+
+<p id="userNumber"><span></span></p>
+<form id="set-nickname">
+    <label for="nickname">请输入您的昵称：</label>
+    <input type="text" id="nickname" />
+    <button>Continue</button>
+</form>
+<ul id="messages"></ul>
+<form action="" id="send-message">
+    <input id="m" autocomplete="off" /><button>Send</button>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    var socket = io();
+    $('#set-nickname').submit(function(){
+        socket.emit("nickname",$('#nickname').val());
+        return false;
+    });
+    $('#send-message').submit(function(){
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+        return false;
+    });
+    socket.on('chat message', function(msg){
+       $('#messages').append($('<li>').text(msg.nick+':'+msg.message));
+    });
+    socket.on('nickname',function(data){
+        $('#userNumber').append($('span').text('当前在线人数：'+data.userNumber+'人'));
+    });
+    socket.on('disconnect', function (unb) {
+        console.log(unb);
+        $('#userNumber').find('span').text('当前在线人数：'+unb.userNumber+'人');
+        $('#messages').append($('<li>').text(unb.name+'已退出'))
+    });
+    $('#set-nickname').find("button").click(function(){
+        $('#set-nickname').hide();
+    });
+</script>
+</body>
+</html>

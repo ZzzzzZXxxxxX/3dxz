@@ -1,0 +1,80 @@
+body
+{
+    background: #ccd6e1;
+    font-family: arial,serif;
+}
+#game
+{
+    width: 500px;
+    margin:0 auto;
+}
+#game h1
+{
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    text-shadow: 0 1px 0 #fff;
+}
+#drawing-pad
+{
+    border: 10px solid #fffeff;
+    background: #454545;
+    box-shadow: 0 3px 5px #333;
+    cursor: url("http://100.0.101.21/BkStatic/images/mypen.cur"), auto;
+}
+#chat-history
+{
+    width: 250px;
+    height: 100px;
+    background-color: #f5f5ff;
+    float: right;
+}
+#chat-history li
+{
+    border-bottom: 1px dashed rgba(20,20,20,.2);
+    margin: 10px 0;
+}
+#message
+{
+    margin: 60px 10px;
+}
+.divColor
+{
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+}
+#Pcolor
+{
+    float:left;
+    background-color:  whitesmoke;
+}
+#divColorY
+{
+    float:left;
+    background-color:  #FFD324;
+}
+#divColorG
+{
+    float:left;
+    background-color: #00A000;
+}
+#divColorB
+ {
+    float:left;
+     background-color: #000000;
+ }
+#divColorH
+  {
+      float:left;
+      background-color: #ff69b4;
+  }
+#divColorR
+{
+    float:left;
+    background-color: #FF0000;
+}
+#btnDraw,#btnReDraw,#btnDrawOver
+{
+ margin: 0 auto;
+}
