@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="styles/videoplayer.css" rel="stylesheet">
+</head>
+<body>
+<div id="main">
+    <div id="custom-video">
+        <video src="medias/oceans.mp4" poster="images/poster.jpg" id="my-video"></video>
+    </div>
+    <div id="video-controls">
+        <div id="video-progress">
+            <div id="buffer-progress"></div>
+            <div id="played-progress"></div>
+            <div id="progress-bar"></div>
+        </div>
+        <div id="video-ctrlpane">
+            <input type="button" class="playClass buttonClass" id="playPause" onclick="playPauseVideo()">
+            <input type="button" class="buttonClass" id="stopVideo" onclick="stopVideo()">
+            <input type="button" class="buttonClass" id="fastBackwardVideo" onclick="fastBackward()">
+            <input type="button" class="buttonClass" id="fastForwardVideo" onclick="fastForward()">
+			<div id="volumeControl">
+				<input type="button" class=" volume buttonClass" id="volume" onclick="volumeControl()">
+				<div id="progressBar"></div>
+				<div id="volumeProgress"></div>
+			</div>
+            <input type="button" class="buttonClass" id="videoFullscreen" onclick="videoFullscreen()">
+            <span id="playTime1"style="color:white;" >00:</span>
+            <span id="playTime" class="playtime">00</span>
+            <span id="playTime2"style="color:red;" >/00:</span>
+            <span id="showVideoTime" style="color:red;"> </span>
+        </div>
+    </div>
+</div>
+<script src="scripts/jquery-1.10.2.min.js"></script>
+<!--<script src="scripts/test.js"></script>-->
+<script src="scripts/html5game.videoplayer.js"></script>
+</body>
+</html>

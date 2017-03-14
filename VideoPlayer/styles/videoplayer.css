@@ -1,0 +1,131 @@
+#main
+{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 960px;
+    background-color: black;
+}
+#custom-video
+{
+    margin: 0 auto;
+    width: 100%;
+}
+#video-controls
+{
+    position: absolute;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    z-index: 2147483648;
+}
+
+.full-screen
+{
+   bottom: 0px;
+}
+
+#myvideo
+{
+    width: 100%;
+    height: 100%;
+}
+#video-progress,#video-ctrlpane
+{
+    width: 100%;
+}
+#video-progress
+{
+    height: 7px;
+    position: relative;
+    background-color: #2c2c2c;
+}
+#video-ctrlpane
+{
+    height: 43px;
+    background-color: #131313;
+    display: flex;
+    align-items: center;
+}
+.buttonClass{
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    margin-left: 15px;
+}
+.pauseClass{
+     background: url("../images/playerSprite.png")  -225px 0 no-repeat;
+ }
+.playClass{
+    background: url("../images/playerSprite.png")  -520px 0 no-repeat;
+}
+#stopVideo{
+    background: url("../images/playerSprite.png")  -335px 0 no-repeat;
+}
+#fastForwardVideo{
+    background: url("../images/playerSprite2.png")  -150px 0 no-repeat;
+}
+#fastBackwardVideo{
+    background: url("../images/playerSprite2.png")  -70px 0 no-repeat;
+}
+.volume{
+    background: url("../images/playerSprite.png")  -0px 0 no-repeat;
+}
+.volumeMute{
+    background: url("../images/playerSprite.png")  -115px 0 no-repeat;
+}
+#videoFullscreen{
+    background: url("../images/playerSprite.png")  -700px 0 no-repeat;
+}
+#showVideoTime
+{
+ position: relative;
+}
+#buffer-progress,#played-progress
+{
+    height: 100%;
+    position: absolute;
+    width: 0;
+    left: 0;
+    background-color: #606060;
+}
+#played-progress
+{
+    background-color: #056e9f;
+}
+#progress-bar
+{
+    width: 25px;
+    height: 12px;
+    position: absolute;
+    background: url("../images/playerSprite2.png") -404px 0;
+    margin-left: -2px;
+    margin-top: -2px;
+}
+.playtime
+{
+    color: #ff0000;
+}
+#volumeControl{
+	width:150px;
+	height:100%;
+	display:flex;
+	align-items:center;
+}
+#volumeProgress{
+	width: 100px;
+    height: 5px;
+    background-color: #606060;
+}
+#progressBar{
+	width: 5px;
+    height: 13px;
+    background: url("../images/playerSprite2.png") -5px 0;
+	display:inline-block;
+	position:relative;
+	left:50px;
+}
+video::-webkit-media-controls-enclosure{
+    display:none !important;;
+}

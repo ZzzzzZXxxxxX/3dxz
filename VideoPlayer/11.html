@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#large{
+			width:100%;
+			height:30px;
+			background:gray;
+			display: flex;
+		}
+		#small{
+			width:30px;
+			height:15px;
+			background:red;
+			margin-top:5px;
+			position:relative;
+		}
+		#div1{
+			width:50px;
+			height:50px;
+			background-color:red;
+			margin-left:50px;
+		}
+		#div2{
+			width:50px;
+			height:50px;
+			background-color:red;
+			float:left;
+		
+		}
+		
+		#div3{
+			width:50px;
+			height:50px;
+			float:left;
+			background-color:red;
+		}
+		#div4{
+			width:50px;
+			height:50px;
+			background-color:red;
+			float:left;
+		}
+		#div5{
+			width:50px;
+			height:50px;
+			background-color:blue;
+			margin-left:50px;
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div id="large">
+		<div id="small">
+			
+		</div>
+	</div>
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+	<div id="div4"></div>
+	<div id="div5"></div>
+	<script src="jquery.js"></script>
+	<script>
+	var left;
+	var moveTF=false;
+	$("#small").mousedown(function(){
+		moveTF=true;	
+	});
+	$("#small").mousemove(function(e){
+		if(moveTF){
+			left=e.pageX-15;
+			$("#small").css({"left":left+"px"});
+		}
+	});
+	$("#small").mouseup(function(e){
+		moveTF=false;
+	});
+	$("#small").mouseover(function(e){
+		moveTF=false;
+		console.log($("#small").offset().left);
+	});
+	</script>
+</body>
+</html>
